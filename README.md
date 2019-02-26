@@ -1,1 +1,1 @@
-SWT Test
+SWT-Test
