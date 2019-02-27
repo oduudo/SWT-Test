@@ -15,8 +15,8 @@ public class HelloWorld {
 	/**
 	 * @param args
 	 */
-	   public static void main (String[] args) 
-	   {
+	public static void main(String[] args) 
+	{
 	      Display display = new Display();
 	      Shell shell = new Shell(display);
 	      Label label = new Label(shell, SWT.NONE);
@@ -29,6 +29,6 @@ public class HelloWorld {
 	         if (!display.readAndDispatch()) display.sleep();
 	      }
 	      display.dispose();
-	   }
+	}
 
 }
