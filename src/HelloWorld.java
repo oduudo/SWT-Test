@@ -21,8 +21,14 @@ public class HelloWorld {
 	      Shell shell = new Shell(display);
 	      Label label = new Label(shell, SWT.NONE);
 	      label.setText("Hello World");
+	      Button button = new Button(shell, SWT.PUSH | SWT.FLAT);
+	      button.setLocation(20, 50);
+	      button.setText("Ich bin ein Button!");
+	      button.pack();
+     
 	      label.pack();
 	      shell.pack();
+   
 	      shell.open();
 	      while (!shell.isDisposed()) 
 	      {
