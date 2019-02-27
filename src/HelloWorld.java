@@ -7,8 +7,15 @@
  *
  */
 
-import org.eclipse.swt.*;
-import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 
 public class HelloWorld {
 
@@ -19,16 +26,31 @@ public class HelloWorld {
 	{
 	      Display display = new Display();
 	      Shell shell = new Shell(display);
-	      Label label = new Label(shell, SWT.NONE);
+	      shell.setSize(500, 300);
+	      shell.setLayout(new RowLayout());
+	      shell.setText("SWT Test");
+	      
+/*	      Label label = new Label(shell, SWT.SEPARATOR);
 	      label.setText("Hello World");
-	      Button button = new Button(shell, SWT.PUSH | SWT.FLAT);
+	      label.pack();
+*/	      
+	      final Button button = new Button(shell, SWT.PUSH | SWT.FLAT);
 	      button.setLocation(20, 50);
 	      button.setText("Ich bin ein Button!");
-	      button.pack();
+	      
+	      final Text text = new Text(shell, SWT.SHADOW_IN);
+	      
+	      button.addSelectionListener(new SelectionListener() {
+
+	          public void widgetSelected(SelectionEvent event) {
+	            text.setText("No worries!");
+	          }
+
+	          public void widgetDefaultSelected(SelectionEvent event) {
+	            text.setText("No worries!");
+	          }
+	        });
      
-	      label.pack();
-	      shell.pack();
-   
 	      shell.open();
 	      while (!shell.isDisposed()) 
 	      {
